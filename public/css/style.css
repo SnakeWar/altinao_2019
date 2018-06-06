@@ -84,14 +84,14 @@ section.cta .overlay{
     margin: 2px 2px 0 0;
 }
 .masthead{
-    background: url(http://localhost/imagens/bg-pattern.png), linear-gradient(to left,#3b5998,#008200) !important;
+    background: url(http://altinao.mayrcon.com.br/images/bg-pattern.png), linear-gradient(to left,#3b5998,#008200) !important;
 }
 
 .features{
-    background: url(http://localhost/imagens/bg-pattern.png), linear-gradient(to left,#008200,#3b5998) !important;
+    background: url(http://altinao.mayrcon.com.br/images/bg-pattern.png), linear-gradient(to left,#008200,#3b5998) !important;
 }
 .cta{
-    background: url(http://localhost/imagens/treinador.png) !important;
+    background: url(http://altinao.mayrcon.com.br/images/treinador.png) !important;
     background-size: cover !important;
 }
 .download{

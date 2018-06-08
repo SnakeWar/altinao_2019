@@ -63,9 +63,7 @@ class InfoGoalController extends Controller
         $game = \App\Game::find($id);
         $infogoals = \App\InfoGoal::all();
         $gols = DB::table('infogoals')
-            ->select('players_id', DB::raw('SUM(quantidade) as gols'))
-            ->groupBy('players_id')
-            ->orderByraw('gols DESC')
+            ->select('*')
             ->get();
         return view('infogoals.addgoljogo')->with(compact('game','id'))->with(compact('teams'))->with(compact('players'))->with(compact('infogoals'))->with(compact('gols'));
     }

@@ -19,16 +19,17 @@
             <p>{{ \Session::get('success') }}</p>
         </div><br />
     @endif
+    <div class="col-12 col-lg-8">
     <table class="table table-striped">
         <thead>
         <tr>
             <th>ID</th>
             <th>Data</th>
-            <th class="ali_direita">Time Casa</th>
+            <th class="ali_direita"></th>
             <th class="ali_direita"></th>
             <th class="ali_centro">Placar</th>
             <th></th>
-            <th class="ali_esquerda">Time Visitante</th>
+            <th class="ali_esquerda"></th>
         </tr>
         </thead>
         <tbody>
@@ -38,14 +39,16 @@
             <tr>
                 <td>{{$game['id']}}</td>
                 <td>{{$game['data']}}</td>
-                <td class="ali_direita">{{$team = App\Team::find($game['teams_casa'])->nome}}</td>
+                <td class="ali_direita">{{$team = App\Team::find($game['teams_casa'])->sigla}}</td>
                 <td class="ali_direita">{{$game['placar_casa']}}</td>
                 <th class="ali_centro">x</th>
                 <td class="ali_esquerda">{{$game['placar_visitante']}}</td>
-                <td>{{$team = App\Team::find($game['teams_visitante'])->nome}}</td>
+                <td>{{$team2 = App\Team::find($game['teams_visitante'])->sigla}}</td>
             </tr>
         </tbody>
     </table>
+    </div>
+    <div class="col-12 col-lg-4">
     <table class="table table-striped">
         <thead>
         <tr>
@@ -62,20 +65,23 @@
         {{--$date=date('Y-m-d', $team['date']);--}}
         {{--@endphp--}}
         @foreach($gols as $gol)
+            @if($gol->games_id == $game['id'])
             <tr>
                 <td></td>
                 <td></td>
                 <td>{{$nome = \App\Player::find($gol->players_id)->nome}}</td>
-                <td>{{$gol->gols}}</td>
+                <td>{{$gol->quantidade}}</td>
                 <td></td>
                 <td></td>
             </tr>
+            @endif
         @endforeach
         </tbody>
     </table>
+    </div>
     <br>
     <h2 class="ali_centro">Add Gol</h2><br/>
-    <hr>
+
     <form method="post" action="{{action('InfoGoalController@update', $id)}}">
         @csrf
         <input name="_method" type="hidden" value="PATCH">

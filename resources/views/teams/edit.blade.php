@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-</head>
-<body>
+@extends('layouts.ce')
+@section('content')
 <div class="container">
     <h2>Edit a Team</h2><br  />
     <form method="post" action="{{action('TeamController@update', $id)}}">
@@ -27,6 +21,13 @@
         </div>
         <div class="row">
             <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+                <label for="logo">Logo:</label>
+                <textarea type="text" class="form-control" name="logo" >{{$team->logo}}</textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
             <div class="form-group col-md-2" style="margin-top:0px">
                 <button type="submit" class="btn btn-success" style="margin-left:38px">UPDATE</button>
             </div>
@@ -36,5 +37,4 @@
         </div>
     </form>
 </div>
-</body>
-</html>
+@endsection

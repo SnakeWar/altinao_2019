@@ -38,6 +38,7 @@ class TeamController extends Controller
         $team = new \App\Team;
         $team->nome=$request->get('name');
         $team->sigla=$request->get('sigla');
+        $team->logo=$request->get('logo');
         $team->save();
         return redirect('/teams')->with('success', 'Information has been added');
     }
@@ -77,6 +78,7 @@ class TeamController extends Controller
         $team= \App\Team::find($id);
         $team->nome=$request->get('name');
         $team->sigla=$request->get('sigla');
+        $team->logo=$request->get('logo');
         $team->save();
         return redirect('/teams');
     }

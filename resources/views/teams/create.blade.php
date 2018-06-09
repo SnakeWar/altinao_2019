@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title> </title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
-</head>
-<body>
+@extends('layouts.ce')
+@section('content')
 <div class="container">
     <h2>Create a new Team</h2><br/>
     <form method="post" action="{{url('teams')}}" enctype="multipart/form-data">
@@ -31,6 +20,13 @@
         </div>
         <div class="row">
             <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+                <label for="Logo">Logo:</label>
+                <textarea type="text" class="form-control" name="logo"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
             <div class="form-group col-md-2" style="margin-top:0px">
                 <button type="submit" class="btn btn-success">Submit</button>
             </div>
@@ -46,5 +42,4 @@
         format: 'dd-mm-yyyy'
     });
 </script>--}}
-</body>
-</html>
+@endsection

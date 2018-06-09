@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-</head>
-<body>
+@extends('layouts.ce')
+@section('content')
 <div class="container">
     <h2>Edit a Player</h2><br  />
     <form method="post" action="{{action('PlayerController@update', $id)}}">
@@ -53,5 +47,4 @@
         </div>
     </form>
 </div>
-</body>
-</html>
+@endsection

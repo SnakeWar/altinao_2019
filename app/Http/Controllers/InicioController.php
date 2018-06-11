@@ -19,7 +19,11 @@ class InicioController extends Controller
             ->orderByraw('gols DESC')
             ->limit(9)
             ->get();
-        $games=\App\Game::all();
+        $games=DB::table('games')
+            ->select('*')
+            ->orderByRaw('data DESC')
+            ->limit(9)
+            ->get();
         $teams=\App\Team::all();
         $players=\App\Player::all();
 

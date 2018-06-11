@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Home</title>
 
@@ -76,7 +77,7 @@
                 <div class="device">
                   <div class="screen">
                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                    <img src="http://localhost/imagens/estadio.png" style="" class="img-fluid" alt="">
+                    <img src="http://altinao.mayrcon.com.br/images/estadio.png" style="" class="img-fluid" alt="">
                   </div>
                   <div class="button">
                     <!-- You can hook the "home button" to some JavaScript events or just remove it -->
@@ -92,13 +93,13 @@
     <section class="download bg-primary text-center" id="download">
       <div class="container">
         <div class="row">
-          <div class="col-lg-5 mx-auto">
+          <div class="col-12 col-lg-5 mx-auto">
             <div class="device-container">
               <div class="device-mockup iphone6_plus portrait white">
                 <div class="device">
                   <div class="screen">
                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                    <img src="http://localhost/imagens/taca.png" style="" class="img-fluid" alt="">
+                    <img src="http://altinao.mayrcon.com.br/images/taca.png" style="" class="img-fluid" alt="">
                   </div>
                   <div class="button">
                     <!-- You can hook the "home button" to some JavaScript events or just remove it -->
@@ -107,13 +108,11 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-7 my-auto">
-            <div class="section-heading text-center">
-              <h2 class="azul-titulo">Tabela 2017/2018</h2>
-              <hr>
-            </div>
-            <table class="table table-striped azul">
+          <div class="col-12 col-lg-7 my-auto">
+
+            <table class="table table-dark">
               <thead>
+              <tr><th colspan="6">Tabela 2017 - 2018</th></tr>
               <tr>
                 <th>Time</th>
                 <th>V</th>
@@ -150,12 +149,10 @@
 
         <div class="row">
           <div class="col-lg-3 col-12 mx-auto">
-            <div class="section-heading text-center">
-              <h2 class="branco-titulo">Artilharia</h2>
-              <hr>
-            </div>
-            <table class="table table-striped branco">
+
+            <table class="table table-dark">
               <thead>
+              <tr><th class="ali_centro" colspan="6">Artilheiro</th></tr>
               <tr>
                 <th></th>
                 <th></th>
@@ -174,7 +171,7 @@
                   <td></td>
                   <td></td>
                   <td>{{$nome = \App\Player::find($gol->players_id)->nome}}</td>
-                  <td>{{$gol->gols}}</td>
+                  <td class="ali_direita">{{$gol->gols}}</td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -183,12 +180,10 @@
             </table>
           </div>
           <div style="margin-left: 5px" class="col-lg-6 col-12 mx-auto">
-            <div class="section-heading text-center">
-              <h2 class="branco-titulo">Jogos</h2>
-              <hr>
-            </div>
-            <table class="table table-striped branco">
+
+            <table class="table table-dark">
               <thead>
+              <tr class="ali_centro"><th colspan="6">Jogos</th></tr>
               <tr>
                 <th>Data</th>
                 <th class="ali_direita"></th>
@@ -205,12 +200,12 @@
                 {{--$date=date('Y-m-d', $team['date']);--}}
                 {{--@endphp--}}
                 <tr>
-                  <td>{{$game['data']}}</td>
-                  <td class="ali_direita">{{$team = App\Team::find($game['teams_casa'])->sigla}}</td>
-                  <td class="ali_direita">{{$game['placar_casa']}}</td>
+                  <td>{{$game->data}}</td>
+                  <td class="ali_direita">{{$team = App\Team::find($game->teams_casa)->sigla}}</td>
+                  <td class="ali_direita">{{$game->placar_casa}}</td>
                   <td class="ali_centro">x</td>
-                  <td class="ali_esquerda">{{$game['placar_visitante']}}</td>
-                  <td class="ali_esquerda">{{$team = App\Team::find($game['teams_visitante'])->sigla}}</td>
+                  <td class="ali_esquerda">{{$game->placar_visitante}}</td>
+                  <td class="ali_esquerda">{{$team = App\Team::find($game->teams_visitante)->sigla}}</td>
                 </tr>
               @endforeach
               </tbody>
@@ -229,12 +224,13 @@
           </div>
           <div class="row">
             @foreach($teams as $team)
-            <div class="col-lg-4 col-4">
+            <div class="col-lg-2 col-4">
+              <h3 class="text-center" style="color: white"><b>{{$team->nome}}</b></h3>
+              <hr>
               <div class="thumbnail">
-                <img class="imagem" src="http://{{$team->logo}}" alt="...">
+                <img class="imagem" src="http://{{$team->logo}}" alt="{{$team->sigla}}">
                 <div class="caption">
-                  <h3 class="text-center"><b>{{$team->nome}}</b></h3>
-                  <hr>
+
                   @foreach($players as $player)
                     @if($player->teams_id == $team->id)
                   <p>{{$player->nome}}</p>

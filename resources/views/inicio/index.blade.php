@@ -1,37 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.main')
 
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>Home</title>
-
-    <!-- Bootstrap core CSS -->
-
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-
-    <!-- Custom fonts for this template -->
-
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
-
-    <!-- Plugin CSS -->
-
-
-    <!-- Custom styles for this template -->
-    <link href="css/new-age.min.css" rel="stylesheet">
-    <link href="css/app.css" rel="stylesheet">
-
-  </head>
-
-  <body id="page-top">
-
+@section('content')
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
@@ -199,7 +168,7 @@
                 {{--@php--}}
                 {{--$date=date('Y-m-d', $team['date']);--}}
                 {{--@endphp--}}
-                <tr>
+                <tr class="button" data-toggle="modal" data-target="#exampleModal-{{$game->id}}">
                   <td>{{$game->data}}</td>
                   <td class="ali_direita">{{$team = App\Team::find($game->teams_casa)->sigla}}</td>
                   <td class="ali_direita">{{$game->placar_casa}}</td>
@@ -207,6 +176,31 @@
                   <td class="ali_esquerda">{{$game->placar_visitante}}</td>
                   <td class="ali_esquerda">{{$team = App\Team::find($game->teams_visitante)->sigla}}</td>
                 </tr>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal-{{$game->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Gols do Jogo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        @foreach($golsdojogo as $quantidade)
+                          @if($game->id == $quantidade->games_id)
+                        <p class="ali_esquerda">{{$nomedojogador = \App\Player::find($quantidade->players_id)->nome}}: {{$quantidade->quantidade}} gol(s).</p>
+                          @endif
+                        @endforeach
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Fim Modal -->
               @endforeach
               </tbody>
             </table>
@@ -313,6 +307,4 @@
     <script src="{{asset('js/new-age.min.js')}}"></script>
     <script src="{{asset('js/app.js')}}"></script>
 
-  </body>
-
-</html>
+  @endsection

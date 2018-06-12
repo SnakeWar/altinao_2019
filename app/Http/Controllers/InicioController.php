@@ -19,6 +19,7 @@ class InicioController extends Controller
             ->orderByraw('gols DESC')
             ->limit(9)
             ->get();
+        $golsdojogo = \App\InfoGoal::all();
         $games=DB::table('games')
             ->select('*')
             ->orderByRaw('data DESC')
@@ -27,6 +28,6 @@ class InicioController extends Controller
         $teams=\App\Team::all();
         $players=\App\Player::all();
 
-        return view('inicio.index')->with(compact('table'))->with(compact('games'))->with(compact('teams'))->with(compact('gols'))->with(compact('players'));
+        return view('inicio.index')->with(compact('table'))->with(compact('games'))->with(compact('teams'))->with(compact('gols'))->with(compact('players'))->with(compact('golsdojogo'));
     }
 }

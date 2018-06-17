@@ -116,29 +116,3 @@ section.cta .overlay{
 .imagem3{
     background: url(http://localhost/imagens/laranjada.jpg);
 }*/
-
-#sidebar-custom{
-    background-color: #2a2a2a;
-    width: 250px;
-
-    position: relative;
-}
-#sidebar-custom.active{
-    margin-left: -250px;
-    position: absolute;
-}
-#sidebar-custom li a:hover{
-    color: #2ab27b;
-    text-decoration: none;
-}
-#sidebar-custom li a{
-    color: white;
-    text-decoration: none;
-}
-#sidebar-custom li{
-    border-bottom: solid 1px white;
-}
-.wrapper {
-    display: flex;
-
-}

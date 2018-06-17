@@ -23,6 +23,8 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#cta">Galeria</a>
             </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="{{ URL::to('login') }}">Login</a>
             </li>
@@ -117,37 +119,6 @@
       <div class="container">
 
         <div class="row">
-          <div class="col-lg-3 col-12 mx-auto">
-
-            <table class="table table-dark">
-              <thead>
-              <tr><th class="ali_centro" colspan="6">Artilheiro</th></tr>
-              <tr>
-                <th></th>
-                <th></th>
-                <th>Nome</th>
-                <th>Gol(s)</th>
-                <th></th>
-                <th></th>
-              </tr>
-              </thead>
-              <tbody>
-              {{--@php--}}
-              {{--$date=date('Y-m-d', $team['date']);--}}
-              {{--@endphp--}}
-              @foreach($gols as $gol)
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td>{{$nome = \App\Player::find($gol->players_id)->nome}}</td>
-                  <td class="ali_direita">{{$gol->gols}}</td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              @endforeach
-              </tbody>
-            </table>
-          </div>
           <div style="margin-left: 5px" class="col-lg-6 col-12 mx-auto">
 
             <table class="table table-dark">
@@ -190,7 +161,7 @@
                       <div class="modal-body">
                         @foreach($golsdojogo as $quantidade)
                           @if($game->id == $quantidade->games_id)
-                        <p class="ali_esquerda">{{$nomedojogador = \App\Player::find($quantidade->players_id)->nome}}: {{$quantidade->quantidade}} gol(s).</p>
+                            <p class="ali_esquerda">{{$nomedojogador = \App\Player::find($quantidade->players_id)->nome}}: {{$quantidade->quantidade}} gol(s).</p>
                           @endif
                         @endforeach
                       </div>
@@ -201,10 +172,42 @@
                   </div>
                 </div>
                 <!-- Fim Modal -->
+
               @endforeach
               </tbody>
             </table>
-      </div>
+          </div>
+          <div class="col-lg-3 col-12 mx-auto">
+
+            <table class="table table-dark">
+              <thead>
+              <tr><th class="ali_centro" colspan="6">Artilheiro</th></tr>
+              <tr>
+                <th></th>
+                <th></th>
+                <th>Nome</th>
+                <th>Gol(s)</th>
+                <th></th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody>
+              {{--@php--}}
+              {{--$date=date('Y-m-d', $team['date']);--}}
+              {{--@endphp--}}
+              @foreach($gols as $gol)
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>{{$nome = \App\Player::find($gol->players_id)->nome}}</td>
+                  <td class="ali_direita">{{$gol->gols}}</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              @endforeach
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
@@ -218,22 +221,22 @@
           </div>
           <div class="row">
             @foreach($teams as $team)
-            <div class="col-lg-2 col-4">
-              <h3 class="text-center" style="color: white"><b>{{$team->nome}}</b></h3>
-              <hr>
-              <div class="thumbnail">
-                <img class="imagem" src="http://{{$team->logo}}" alt="{{$team->sigla}}">
-                <div class="caption">
+              <div class="col-lg-2 col-4">
+                <h3 class="text-center" style="color: white"><b>{{$team->nome}}</b></h3>
+                <hr>
+                <div class="thumbnail">
+                  <img class="imagem" src="http://{{$team->logo}}" alt="{{$team->sigla}}">
+                  <div class="caption">
 
-                  @foreach($players as $player)
-                    @if($player->teams_id == $team->id)
-                  <p>{{$player->nome}}</p>
-                    @endif
-                  @endforeach
+                    @foreach($players as $player)
+                      @if($player->teams_id == $team->id)
+                        <p>{{$player->nome}}</p>
+                      @endif
+                    @endforeach
+                  </div>
                 </div>
               </div>
-            </div>
-              @endforeach
+            @endforeach
           </div>
         </div>
       </div>

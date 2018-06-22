@@ -35,6 +35,19 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
+        $input = request()->validate([
+
+            'name' => 'required',
+            'sigla' => 'required|max:3',
+            'logo' => 'max:250'
+
+        ], [
+            'name.required' => 'Nome do Time.',
+            'sigla.required' => 'Sigla.',
+            'sigla.max' => 'Máximo de 3 caracteres em Sigla.',
+            'logo.max' => 'Máximo de 250 caracteres em Logo'
+
+        ]);
         $team = new \App\Team;
         $team->nome=$request->get('name');
         $team->sigla=$request->get('sigla');
@@ -75,6 +88,16 @@ class TeamController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $input = request()->validate([
+
+            'name' => 'required',
+            'sigla' => 'required'
+
+        ], [
+            'name.required' => 'Nome do Time.',
+            'sigla.required' => 'Sigla.'
+
+        ]);
         $team= \App\Team::find($id);
         $team->nome=$request->get('name');
         $team->sigla=$request->get('sigla');

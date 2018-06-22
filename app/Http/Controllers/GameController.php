@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -39,6 +40,29 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
+        $input = request()->validate([
+
+            'data' => 'required',
+
+            'placar_casa' => 'required',
+
+            'placar_visitante' => 'required',
+
+            'time_casa' => 'required',
+
+            'time_visitante' => 'required'
+
+        ], [
+
+            'data.required' => 'Data.',
+            'placar_casa.required' => 'Placar Casa.',
+            'placar_visitante.required' => 'Placar Visitante.',
+            'time_casa.required' => 'Time Casa.',
+            'time_visitante.required' => 'Time Visitante.'
+
+        ]);
+
+
         $game = new \App\Game;
         $game->data=$request->get('data');
         $game->placar_casa=$request->get('placar_casa');
@@ -46,7 +70,7 @@ class GameController extends Controller
         $game->teams_casa=$request->get('time_casa');
         $game->teams_visitante=$request->get('time_visitante');
         $game->save();
-        return redirect('/games')->with('success', 'Information has been added');
+        return redirect('/games')->with('success', 'A informação foi adicionada');
     }
 
     /**
@@ -82,6 +106,27 @@ class GameController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $input = request()->validate([
+
+            'data' => 'required',
+
+            'placar_casa' => 'required',
+
+            'placar_visitante' => 'required',
+
+            'time_casa' => 'required',
+
+            'time_visitante' => 'required'
+
+        ], [
+
+            'data.required' => 'Data.',
+            'placar_casa.required' => 'Placar Casa.',
+            'placar_visitante.required' => 'Placar Visitante.',
+            'time_casa.required' => 'Time Casa.',
+            'time_visitante.required' => 'Time Visitante.'
+
+        ]);
         $game= \App\Game::find($id);
         $game->data=$request->get('data');
         $game->placar_casa=$request->get('placar_casa');

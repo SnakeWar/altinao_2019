@@ -1,11 +1,55 @@
 @extends('layouts.ce')
 @section('content')
-<div class="container">@if (\Session::has('success'))
-        <div class="alert alert-success">
-            <p>{{ \Session::get('success') }}</p>
-        </div><br />
+<div class="container">
+    <h2 class="ali_centro">Adicionar Gol</h2><br/>
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <h4>Campos obrigatórios</h4>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
     @endif
+    <form method="post" action="{{action('InfoGoalController@update', $id)}}">
+        @csrf
+        <input name="_method" type="hidden" value="PATCH">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+                <label>Quantidade de Gol(s)</label>
+                <input type="text" class="form-control" name="quantidade">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+                <lable ><b>Jogador</b></lable>
+                <select class="form-control" id="exampleFormControlSelect2" style="margin-top:5px" name="jogador">
+                    <option value="">Selecione</option>
+                    @foreach($players as $player)
+                        @if(($player['teams_id']==$game['teams_casa']) || ($player['teams_id']==$game['teams_visitante']))
+                            <option value="{{$player['id']}}">{{$player['nome']}}</option>
+                        @endif
+                    @endforeach
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="form-group col-md-2" style="margin-top:5px">
+                <button type="submit" class="btn btn-success">ADICIONAR</button>
+            </div>
+            <div class="form-group col-md-2" style="margin-top: 5px;">
+                <a class="btn btn-danger" href="{{ URL::to('games') }}">BACK</a>
+            </div>
+        </div>
+    </form>
+    <div class="row">
     <div class="col-12 col-lg-8">
+
     <table class="table table-striped">
         <thead>
         <tr>
@@ -65,42 +109,7 @@
         </tbody>
     </table>
     </div>
-    <br>
-    <h2 class="ali_centro">Add Gol</h2><br/>
-
-    <form method="post" action="{{action('InfoGoalController@update', $id)}}">
-        @csrf
-        <input name="_method" type="hidden" value="PATCH">
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="form-group col-md-4">
-                <label>Quantidade de Gol(s)</label>
-                <input type="text" class="form-control" name="quantidade">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="form-group col-md-4">
-                <lable ><b>Jogador</b></lable>
-                <select class="form-control" multiple id="exampleFormControlSelect2" style="margin-top:5px" name="jogador">
-                    @foreach($players as $player)
-                        @if(($player['teams_id']==$game['teams_casa']) || ($player['teams_id']==$game['teams_visitante']))
-                            <option value="{{$player['id']}}">{{$player['nome']}}</option>
-                        @endif
-                    @endforeach
-                </select>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="form-group col-md-2" style="margin-top:5px">
-                <button type="submit" class="btn btn-success">ADICIONAR</button>
-            </div>
-            <div class="form-group col-md-2" style="margin-top: 5px;">
-                <a class="btn btn-danger" href="{{ URL::to('games') }}">BACK</a>
-            </div>
-        </div>
-    </form>
+    </div>
 </div>
 <script type="text/javascript">
     $('#datepicker').datepicker({

@@ -1,7 +1,19 @@
 @extends('layouts.ce')
 @section('content')
 <div class="container">
-    <h2 class="ali_centro">Create a new Game</h2><br/>
+    <h2 class="ali_centro">Criar um novo jogo</h2><br/>
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <h4>Campos obrigatórios</h4>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <form method="post" action="{{url('games')}}" enctype="multipart/form-data">
         @csrf
         <div class="row">
@@ -21,15 +33,9 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-                <label >Placa Visitante</label>
-                <input type="text" class="form-control" name="placar_visitante" value="">
-            </div>
-        </div>
-            <div class="row">
-            <div class="col-md-4"></div>
-            <div class="form-group col-md-4">
                 <lable >Time Casa</lable>
-                <select class="form-control" multiple id="exampleFormControlSelect2" style="margin-top:5px" name="time_casa">
+                <select class="form-control" id="exampleFormControlSelect2" style="margin-top:5px" name="time_casa">
+                    <option value="">Selecione</option>
                     @foreach($teams as $team)
                         <option value="{{$team['id']}}">{{$team['nome']}}</option>
                     @endforeach
@@ -39,8 +45,17 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
+                <label >Placa Visitante</label>
+                <input type="text" class="form-control" name="placar_visitante" value="">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
                 <lable >Time Visitante</lable>
-                <select class="form-control" multiple id="exampleFormControlSelect2" style="margin-top:5px" name="time_visitante">
+                <select class="form-control" id="exampleFormControlSelect2" style="margin-top:5px" name="time_visitante">
+                    <option value="">Selecione</option>
                     @foreach($teams as $team)
                         <option value="{{$team['id']}}">{{$team['nome']}}</option>
                     @endforeach

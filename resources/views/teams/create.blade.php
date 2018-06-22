@@ -2,6 +2,18 @@
 @section('content')
 <div class="container">
     <h2>Create a new Team</h2><br/>
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <h4>Campos obrigatórios</h4>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <form method="post" action="{{url('teams')}}" enctype="multipart/form-data">
         @csrf
         <div class="row">

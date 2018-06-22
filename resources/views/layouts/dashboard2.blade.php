@@ -14,12 +14,14 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+    <link rel="icon" href="http://altinao.mayrcon.com.br/images/favicon.png" />
 
     <!-- Styles -->
-
+    <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap core CSS-->
     <link href="http://altinao.mayrcon.com.br/admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -32,40 +34,40 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">Campeonato Altinão 2017-2018</a>
+    <a class="navbar-brand" href="{{ URL::to('inicio') }}">Campeonato Altinão 2017-2018</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Central">
                 <a class="nav-link" href="{{ URL::to('home') }}">
-                    <i class="fa fa-fw fa-address-book"></i>
-                    <span class="nav-link-text">Dashboard</span>
+                    <i class="fa fa-fw fa-dashboard"></i>
+                    <span class="nav-link-text">Central</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Games">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Jogos">
                 <a class="nav-link" href="{{ URL::to('games') }}">
-                    <i class="fa fa-fw fa-area-chart"></i>
-                    <span class="nav-link-text">Games</span>
+                    <i class="fa fa-fw fa-calendar"></i>
+                    <span class="nav-link-text">Jogos</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Jogadores">
                 <a class="nav-link" href="{{ URL::to('players') }}">
-                    <i class="fa fa-fw fa-table"></i>
-                    <span class="nav-link-text">Players</span>
+                    <i class="fa fa-fw fa-address-card"></i>
+                    <span class="nav-link-text">Jogadores</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Times">
                 <a class="nav-link" href="{{ URL::to('teams') }}">
-                    <i class="fa fa-fw fa-link"></i>
-                    <span class="nav-link-text">Teams</span>
+                    <i class="fa fa-fw fa-address-book"></i>
+                    <span class="nav-link-text">Times</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tabela">
                 <a class="nav-link" href="{{ URL::to('table') }}">
-                    <i class="fa fa-fw fa-link"></i>
-                    <span class="nav-link-text">Tables</span>
+                    <i class="fa fa-fw fa-table"></i>
+                    <span class="nav-link-text">Tabela</span>
                 </a>
             </li>
             {{--<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">

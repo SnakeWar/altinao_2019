@@ -77,6 +77,16 @@ class InfoGoalController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $input = request()->validate([
+
+            'jogador' => 'required',
+            'quantidade' => 'required'
+
+        ], [
+            'jogador.required' => 'Nome Jogador.',
+            'quantidade.required' => 'Quantidade.'
+
+        ]);
         $infogoals= new \App\InfoGoal;
         $infogoals->players_id=$request->get('jogador');
         $infogoals->games_id=$id;

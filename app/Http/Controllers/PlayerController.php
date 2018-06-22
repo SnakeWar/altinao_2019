@@ -37,6 +37,16 @@ class PlayerController extends Controller
      */
     public function store(Request $request)
     {
+        $input = request()->validate([
+
+            'name' => 'required',
+            'team' => 'required'
+
+        ], [
+            'name.required' => 'Nome do Jogador.',
+            'team.required' => 'Time.'
+
+        ]);
         $player = new \App\Player;
         $player->nome=$request->get('name');
         $player->teams_id=$request->get('team');
@@ -78,6 +88,16 @@ class PlayerController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $input = request()->validate([
+
+            'nome' => 'required',
+            'teams_id' => 'required'
+
+        ], [
+            'nome.required' => 'Nome do Jogador.',
+            'teams_id.required' => 'Time.'
+
+        ]);
         $player= \App\Player::find($id);
         $player->nome=$request->get('name');
         $player->teams_id=$request->get('team');

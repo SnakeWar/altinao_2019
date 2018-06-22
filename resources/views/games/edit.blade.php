@@ -1,7 +1,19 @@
 @extends('layouts.ce')
 @section('content')
 <div class="container">
-    <h2>Edit a Player</h2><br  />
+    <h2>Editar Jogador</h2><br  />
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <h4>Campos obrigatórios</h4>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <form method="post" action="{{action('GameController@update', $id)}}">
         @csrf
         <input name="_method" type="hidden" value="PATCH">
@@ -22,15 +34,8 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-                <label >Placa Visitante</label>
-                <input type="text" class="form-control" name="placar_visitante" value="{{$game->placar_visitante}}">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="form-group col-md-4">
                 <lable >Time Casa</lable>
-                <select class="form-control" multiple id="exampleFormControlSelect2" style="margin-top:5px;" name="time_casa">
+                <select class="form-control" id="exampleFormControlSelect2" style="margin-top:5px;" name="time_casa">
                     @foreach($teams as $team)
                         <option value="{{$team['id']}}" @if($team['id']==$game->teams_casa) selected @endif>{{$team['nome']}}</option>
                     @endforeach
@@ -40,8 +45,16 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
+                <label >Placa Visitante</label>
+                <input type="text" class="form-control" name="placar_visitante" value="{{$game->placar_visitante}}">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
                 <lable >Time Visitante</lable>
-                <select class="form-control" multiple id="exampleFormControlSelect2" style="margin-top:5px" name="time_visitante">
+                <select class="form-control" id="exampleFormControlSelect2" style="margin-top:5px" name="time_visitante">
                     @foreach($teams as $team)
                         <option value="{{$team['id']}}" @if($team['id']==$game->teams_visitante) selected @endif>{{$team['nome']}}</option>
                     @endforeach

@@ -2,6 +2,18 @@
 @section('content')
 <div class="container">
     <h2>Edit a Team</h2><br  />
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <h4>Campos obrigatórios</h4>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <form method="post" action="{{action('TeamController@update', $id)}}">
         @csrf
         <input name="_method" type="hidden" value="PATCH">

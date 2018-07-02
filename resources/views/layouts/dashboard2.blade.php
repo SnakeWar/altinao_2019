@@ -1,15 +1,15 @@
-<html lang="{{ app()->getLocale() }}">
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Site desenvolvido para ">
+    <meta name="description" content="Site desenvolvido para Campeonato Altinão 2017-2018">
     <meta name="author" content="SnakeWar">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Campeonato Altinão</title>
+    <title>Campeonato Altinão 2017-2018</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -297,22 +297,6 @@
     <script src="{{asset('js/jquery.easing.min.js')}}"></script>
     <!-- Custom scripts for all pages-->
     <script src="{{asset('js/sb-admin.min.js')}}"></script>
-<script>
-    $('#toggleNavPosition').click(function() {
-        $('body').toggleClass('fixed-nav');
-        $('nav').toggleClass('fixed-top static-top');
-    });
-
-</script>
-<!-- Toggle between dark and light navbar-->
-<script>
-    $('#toggleNavColor').click(function() {
-        $('nav').toggleClass('navbar-dark navbar-light');
-        $('nav').toggleClass('bg-dark bg-light');
-        $('body').toggleClass('bg-dark bg-light');
-    });
-
-</script>
 </div>
 </body>
 </html>

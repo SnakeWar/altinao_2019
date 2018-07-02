@@ -5,11 +5,11 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Site feito para o Campeonato Altinão 2017-2018, realizado no Campo Altinão, Canguaretama-RN">
+    <meta name="author" content="SnakeWar">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Home</title>
+    <title>Campeonato Altinão 2017-2018</title>
 
     <!-- Bootstrap core CSS -->
 

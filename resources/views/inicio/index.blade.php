@@ -39,7 +39,7 @@
           <div class="col-sm-12 col-lg-7 my-auto">
             <div class="header-content mx-auto">
               <h1 class="mb-5">Campeonato Altinão 2017/2018</h1>
-              <a href="http://altinao.mayrcon.com.br/download/altinao_app.apk" class="btn btn-outline btn-xl js-scroll-trigger">Baixe o Aplicativo</a>
+              <a href="http://api.mayrcon.com.br/download/altinao_app.apk" class="btn btn-outline btn-xl js-scroll-trigger">Baixe o Aplicativo</a>
             </div>
           </div>
           <div class="col-lg-5 my-auto">

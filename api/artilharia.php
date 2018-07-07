@@ -37,7 +37,7 @@ if (isset($postdata)) {
     echo "erro 2";
 }*/
 include('../config/banco.php');
-$result = mysqli_query($link, "SELECT infogoals.players_id, SUM(infogoals.quantidade) as gols, players.nome
+$result = mysqli_query($link, "SELECT infogoals.players_id, SUM(infogoals.quantidade) as gols, players.nome as nome
           FROM players
           LEFT JOIN infogoals ON infogoals.players_id = players.id
           WHERE (infogoals.quantidade > 0) GROUP BY players_id ORDER BY SUM(infogoals.quantidade) DESC");
@@ -45,7 +45,7 @@ $result = mysqli_query($link, "SELECT infogoals.players_id, SUM(infogoals.quanti
             while($artilharia_php = mysqli_fetch_assoc($result)){
 
              /*-----------------TESTE--------------------*/
-var_dump($artilharia_php);
+
             $artilharia[] = $artilharia_php;
 
             /* -----------------TESTE------------------*/

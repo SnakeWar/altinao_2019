@@ -37,7 +37,7 @@ if (isset($postdata)) {
     echo "erro 2";
 }*/
 include('../config/banco.php');
-$result = mysqli_query($link, "SELECT nome FROM players WHERE teams_id = 3 ORDER BY nome ASC");
+$result = mysqli_query($link, "SELECT nome FROM players WHERE teams_id = 2 ORDER BY nome ASC");
 
             while($jogador_php = mysqli_fetch_assoc($result)){
 

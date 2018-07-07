@@ -1,4 +1,5 @@
 <?php
+header("Content-type: text/html; charset=utf-8");
 if (isset($_SERVER['HTTP_ORIGIN'])) {
     header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
     header('Access-Control-Allow-Credentials: true');
@@ -37,7 +38,7 @@ if (isset($postdata)) {
     echo "erro 2";
 }*/
 include('../config/banco.php');
-$result = mysqli_query($link, "SELECT nome FROM players WHERE teams_id = 1 ORDER BY nome ASC");
+$result = mysqli_query($link, "SELECT nome FROM players WHERE teams_id = 4 ORDER BY nome ASC");
 
             while($jogador_php = mysqli_fetch_assoc($result)){
 

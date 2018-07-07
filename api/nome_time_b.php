@@ -37,7 +37,7 @@ if (isset($postdata)) {
     echo "erro 2";
 }*/
 include('../config/banco.php');
-$result = mysqli_query($link, "SELECT nome FROM teams WHERE id = 2");
+$result = mysqli_query($link, "SELECT nome FROM teams WHERE id = 3");
 
             while($time_php = mysqli_fetch_assoc($result)){
 

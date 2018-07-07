@@ -37,7 +37,8 @@ if (isset($postdata)) {
     echo "erro 2";
 }*/
 include('../config/banco.php');
-$result = mysqli_query($link, "SELECT `nome`, `pontos`, `vitorias`, `gols_pro`, `gols_con`, `saldo`, `sigla` FROM `teams` ORDER BY `pontos` DESC,`vitorias` DESC,`saldo` DESC");
+
+$result = mysqli_query($link, "SELECT nome, pontos, vitorias, gols_pro, gols_con, saldo, sigla FROM teams ORDER BY pontos DESC,vitorias DESC,saldo DESC");
 
             while($tabela_php = mysqli_fetch_assoc($result)){
 
@@ -50,5 +51,5 @@ $result = mysqli_query($link, "SELECT `nome`, `pontos`, `vitorias`, `gols_pro`, 
 
             $tabela_json = json_encode($tabela);
             echo "$tabela_json";
-
+json_last_error_msg();
 ?>

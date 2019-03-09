@@ -38,7 +38,7 @@ if (isset($postdata)) {
     echo "erro 2";
 }*/
 include('../config/banco.php');
-$result = mysqli_query($link, "SELECT j.id AS id_jogo,tc.nome AS time_casa, tv.nome AS time_visitante, j.data AS data, j.placar_casa, j.placar_visitante FROM games  j
+$result = mysqli_query($link, "SELECT tc.sigla AS sigla_casa ,tv.sigla AS sigla_visitante , j.id AS id_jogo, tc.nome AS time_casa, tv.nome AS time_visitante, j.data AS data, j.placar_casa, j.placar_visitante FROM games  j
             LEFT JOIN teams tv ON tv.id = j.teams_visitante
             LEFT JOIN teams tc ON tc.id = j.teams_casa ORDER BY j.id DESC");
 
@@ -50,7 +50,6 @@ $result = mysqli_query($link, "SELECT j.id AS id_jogo,tc.nome AS time_casa, tv.n
 
             /* -----------------TESTE------------------*/
             }
-
             $jogos_json = json_encode($jogos);
             echo "$jogos_json";
 

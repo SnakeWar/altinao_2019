@@ -13,14 +13,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     exit(0);
 }
 $postData = file_get_contents("php://input");
-
+echo $postData;
 if (isset($postData)) {
+
     $request = json_decode($postData);
     $jogo_id = $request->id;
 
     include_once '../config/banco.php';
     /*$cidade = array();*/
-    $sql = "SELECT jo.nome AS jogador, gol.quantidade AS gols FROM infogoals AS gol LEFT JOIN players AS jo ON jo.id = gol.players_id WHERE gol.games_id = '$jogo_id'";
+    $sql = "SELECT jo.id AS id jo.nome AS jogador, gol.quantidade AS gols FROM infogoals AS gol LEFT JOIN players AS jo ON jo.id = gol.players_id WHERE gol.games_id = '$jogo_id'";
 //    $cmd->bindParam(':ID', $matricula);
     $result = mysqli_query($link, $sql);
     while($row = mysqli_fetch_assoc($result)){
@@ -33,7 +34,8 @@ if (isset($postData)) {
 //        $cidade[] = ['nome' => $nome, ];
     }
     /*$gols = array("result" => $cidade);*/
-    $json = json_encode($gols);
+    $gols2 = array('docs' => $gols) ;
+    $json = json_encode($gols2);
     // $teste = $_POST[$json];
     echo $json;
 }else{

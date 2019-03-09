@@ -23,3 +23,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 $this->get('/verify-user/{code}', 'Auth\RegisterController@activateUser')->name('activate.user');
+
+Route::group(array('prefix' => 'api'), function()
+{Route::get('/', function () {
+    return response()->json(['message' => 'Jobs API', 'status' => 'Connected']);
+});
+    Route::resource('teams','TeamApiController');
+    Route::resource('players','PlayerApiController');
+    Route::resource('games','GameApiController');
+    Route::get('infogoals/{id}','InfoGoalApiController@show');
+    Route::resource('table','TableApiController');
+});

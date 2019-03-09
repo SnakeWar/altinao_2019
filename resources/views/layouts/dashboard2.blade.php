@@ -18,17 +18,17 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
-    <link rel="icon" href="http://altinao.mayrcon.com.br/images/favicon.png" />
+    <link rel="icon" href="http://localhost/laravel2-versao3/images/favicon.png" />
 
     <!-- Styles -->
     <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap core CSS-->
-    <link href="http://altinao.mayrcon.com.br/admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://localhost/laravel2-versao3/admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template-->
-    <link href="http://altinao.mayrcon.com.br/admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://localhost/laravel2-versao3/admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template-->
-    <link href="http://altinao.mayrcon.com.br/admin/css/sb-admin.css" rel="stylesheet">
+    <link href="http://localhost/laravel2-versao3/admin/css/sb-admin.css" rel="stylesheet">
 
 </head>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">

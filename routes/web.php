@@ -29,7 +29,8 @@ Route::group(array('prefix' => 'api'), function()
     return response()->json(['message' => 'Jobs API', 'status' => 'Connected']);
 });
     Route::resource('teams','TeamApiController');
-    Route::resource('players','PlayerApiController');
+    Route::get('playerslist/{id}','TeamApiController@show');
+    Route::resource('topscore','TopScoreApiController');
     Route::resource('games','GameApiController');
     Route::get('infogoals/{id}','InfoGoalApiController@show');
     Route::resource('table','TableApiController');

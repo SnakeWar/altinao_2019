@@ -39,7 +39,7 @@
           <div class="col-sm-12 col-lg-7 my-auto">
             <div class="header-content mx-auto">
               <h1 class="mb-5">Campeonato Altinão 2017/2018</h1>
-              <a href="http://api.mayrcon.com.br/download/altinao_app.apk" class="btn btn-outline btn-xl js-scroll-trigger">Baixe o Aplicativo</a>
+              <a href="http://10.0.0.5/altinao_2019/download/altinao_app.apk" class="btn btn-outline btn-xl js-scroll-trigger">Baixe o Aplicativo</a>
             </div>
           </div>
           <div class="col-lg-5 my-auto">
@@ -48,7 +48,7 @@
                 <div class="device">
                   <div class="screen">
                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                    <img src="http://localhost/laravel2-versao3/images/estadio.png" style="" class="img-fluid" alt="">
+                    <img src="http://10.0.0.5/images/estadio.png" style="" class="img-fluid" alt="">
                   </div>
                   <div class="button">
                     <!-- You can hook the "home button" to some JavaScript events or just remove it -->
@@ -70,7 +70,7 @@
                 <div class="device">
                   <div class="screen">
                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                    <img src="http://localhost/laravel2-versao3/images/taca.png" style="" class="img-fluid" alt="">
+                    <img src="http://10.0.0.5/images/taca.png" style="" class="img-fluid" alt="">
                   </div>
                   <div class="button">
                     <!-- You can hook the "home button" to some JavaScript events or just remove it -->
@@ -258,15 +258,15 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img class="d-block w-100" src="http://localhost/laravel2-versao3/images/barsemlona.jpg" alt="First slide">
+              <img class="d-block w-100" src="http://localhost/images/barsemlona.jpg" alt="First slide">
             </div>
             <div class="carousel-item">
               <div class="imagem2"></div>
-              <img class="d-block w-100" src="http://localhost/laravel2-versao3/images/pecomchule.jpg" alt="Second slide">
+              <img class="d-block w-100" src="http://localhost/images/pecomchule.jpg" alt="Second slide">
             </div>
             <div class="carousel-item">
               <div class="imagem3"></div>
-              <img class="d-block w-100" src="http://localhost/laravel2-versao3/images/laranjada.jpg" alt="Third slide">
+              <img class="d-block w-100" src="http://localhost/images/laranjada.jpg" alt="Third slide">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

@@ -12,23 +12,23 @@
     <title>Campeonato Altinão 2017-2018</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+
 
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
-    <link rel="icon" href="http://localhost/laravel2-versao3/images/favicon.png" />
+    <link rel="icon" href="http://10.0.0.5/images/favicon.png" />
 
     <!-- Styles -->
     <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap core CSS-->
-    <link href="http://localhost/laravel2-versao3/admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://10.0.0.5/admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template-->
-    <link href="http://localhost/laravel2-versao3/admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://10.0.0.5/admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template-->
-    <link href="http://localhost/laravel2-versao3/admin/css/sb-admin.css" rel="stylesheet">
+    <link href="http://10.0.0.5/admin/css/sb-admin.css" rel="stylesheet">
 
 </head>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -244,10 +244,11 @@
 <div class="content-wrapper">
     <div class="container-fluid">
 <br>
+        <div id='app'>
         <main class="py-4">
             @yield('content')
         </main>
-
+        </div>
     </div>
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
@@ -289,14 +290,17 @@
         </div>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Bootstrap core JavaScript-->
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 
     <!-- Core plugin JavaScript-->
     <script src="{{asset('js/jquery.easing.min.js')}}"></script>
     <!-- Custom scripts for all pages-->
     <script src="{{asset('js/sb-admin.min.js')}}"></script>
+
 </div>
 </body>
 </html>

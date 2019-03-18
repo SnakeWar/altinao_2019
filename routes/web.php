@@ -25,13 +25,19 @@ Route::get('/home', 'HomeController@index')->name('home');
 $this->get('/verify-user/{code}', 'Auth\RegisterController@activateUser')->name('activate.user');
 
 Route::group(array('prefix' => 'api'), function()
-{Route::get('/', function () {
+{
+    Route::get('/', function () {
     return response()->json(['message' => 'Jobs API', 'status' => 'Connected']);
 });
-    Route::resource('teams','TeamApiController');
-    Route::get('playerslist/{id}','TeamApiController@show');
-    Route::resource('topscore','TopScoreApiController');
-    Route::resource('games','GameApiController');
-    Route::get('infogoals/{id}','InfoGoalApiController@show');
-    Route::resource('table','TableApiController');
+    Route::resource('teams','Api\TeamApiController');
+    Route::get('playerslist/{id}','Api\TeamApiController@show');
+    Route::resource('topscore','Api\TopScoreApiController');
+    Route::resource('games','Api\GameApiController');
+    Route::get('infogoals/{id}','Api\InfoGoalApiController@show');
+    Route::resource('table','Api\TableApiController');
+
+    Route::group(['middleware' => 'auth:api'], function(){
+
+        Route::post('getUser', 'Api\AuthController@getUser');
+    });
 });

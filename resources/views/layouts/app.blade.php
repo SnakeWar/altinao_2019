@@ -16,7 +16,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
-    <link rel="icon" href="http://altinao.mayrcon.com.br/images/favicon.png" />
+    <link rel="icon" href="http://10.0.0.5/images/favicon.png" />
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -44,7 +44,9 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a class="nav-link" href="{{ URL::to('inicio') }}">{{ __('INÍCIO') }}</a></li>
+                            <li><a class="nav-link" href="{{ URL::to('inicio') }}">{{ __('INÍCIO') }}</a>
+                                <a class="nav-link" href="{{ URL::to('register') }}">{{ __('REGISTRAR') }}</a>
+                            </li>
 
                         @else
                             <ul class="nav nav-pills nav-stacked">

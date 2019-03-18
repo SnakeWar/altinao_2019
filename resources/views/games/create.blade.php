@@ -33,7 +33,7 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-                <lable >Time Casa</lable>
+                <label >Time Casa</label>
                 <select class="form-control" id="exampleFormControlSelect2" style="margin-top:5px" name="time_casa">
                     <option value="">Selecione</option>
                     @foreach($teams as $team)
@@ -53,7 +53,7 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-                <lable >Time Visitante</lable>
+                <label >Time Visitante</label>
                 <select class="form-control" id="exampleFormControlSelect2" style="margin-top:5px" name="time_visitante">
                     <option value="">Selecione</option>
                     @foreach($teams as $team)
@@ -68,16 +68,10 @@
             <div class="form-group col-md-2" style="margin-top:5px">
                 <button type="submit" class="btn btn-success">ADICIONAR</button>
             </div>
-            <div class="form-group col-md-2" style="margin-top: 5px;px">
+            <div class="form-group col-md-2" style="margin-top: 5px">
             <a class="btn btn-danger" href="{{ URL::to('games') }}">BACK</a>
             </div>
         </div>
     </form>
 </div>
-<script type="text/javascript">
-    $('#datepicker').datepicker({
-        autoclose: true,
-        format: 'dd-mm-yyyy'
-    });
-</script>
 @endsection

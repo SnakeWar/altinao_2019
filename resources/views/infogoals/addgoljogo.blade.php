@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-                <lable ><b>Jogador</b></lable>
+                <label ><b>Jogador</b></label>
                 <select class="form-control" id="exampleFormControlSelect2" style="margin-top:5px" name="jogador">
                     <option value="">Selecione</option>
                     @foreach($players as $player)
@@ -111,10 +111,4 @@
     </div>
     </div>
 </div>
-<script type="text/javascript">
-    $('#datepicker').datepicker({
-        autoclose: true,
-        format: 'dd-mm-yyyy'
-    });
-</script>
 @endsection

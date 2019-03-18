@@ -72,10 +72,4 @@
         </div>
     </form>
 </div>
-<script type="text/javascript">
-    $('#datepicker').datepicker({
-        autoclose: true,
-        format: 'dd-mm-yyyy'
-    });
-</script>
 @endsection

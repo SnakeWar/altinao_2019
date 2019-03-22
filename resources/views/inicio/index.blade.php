@@ -34,12 +34,12 @@
     </nav>
 
     <header class="masthead">
-      <div class="container h-100">
+      <div class="container h-100" id="app">
         <div class="row h-100">
           <div class="col-sm-12 col-lg-7 my-auto">
             <div class="header-content mx-auto">
               <h1 class="mb-5">Campeonato Altinão 2017/2018</h1>
-              <a href="http://10.0.0.5/altinao_2019/download/altinao_app.apk" class="btn btn-outline btn-xl js-scroll-trigger">Baixe o Aplicativo</a>
+              <a href="http://localhost/altinao_2019/download/altinao_app.apk" class="btn btn-outline btn-xl js-scroll-trigger">Baixe o Aplicativo</a>
             </div>
           </div>
           <div class="col-lg-5 my-auto">
@@ -48,7 +48,7 @@
                 <div class="device">
                   <div class="screen">
                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                    <img src="http://10.0.0.5/images/estadio.png" style="" class="img-fluid" alt="">
+                    <img src="http://localhost/images/estadio.png" style="" class="img-fluid" alt="">
                   </div>
                   <div class="button">
                     <!-- You can hook the "home button" to some JavaScript events or just remove it -->
@@ -70,7 +70,7 @@
                 <div class="device">
                   <div class="screen">
                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                    <img src="http://10.0.0.5/images/taca.png" style="" class="img-fluid" alt="">
+                    <img src="http://localhost/images/taca.png" style="" class="img-fluid" alt="">
                   </div>
                   <div class="button">
                     <!-- You can hook the "home button" to some JavaScript events or just remove it -->

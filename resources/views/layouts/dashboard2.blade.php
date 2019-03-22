@@ -18,17 +18,17 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
-    <link rel="icon" href="http://10.0.0.5/images/favicon.png" />
+    <link rel="icon" href="http://localhost/images/favicon.png" />
 
     <!-- Styles -->
     <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap core CSS-->
-    <link href="http://10.0.0.5/admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://localhost/admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template-->
-    <link href="http://10.0.0.5/admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://localhost/admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template-->
-    <link href="http://10.0.0.5/admin/css/sb-admin.css" rel="stylesheet">
+    <link href="http://localhost/admin/css/sb-admin.css" rel="stylesheet">
 
 </head>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">

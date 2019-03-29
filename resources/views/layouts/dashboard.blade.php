@@ -79,7 +79,6 @@
 
 <!-- Custom scripts for this template -->
 <script src="{{asset('js/new-age.min.js')}}"></script>
-<script src="{{asset('js/app.js')}}"></script>
 
 
 

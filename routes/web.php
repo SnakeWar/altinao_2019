@@ -27,7 +27,7 @@ $this->get('/verify-user/{code}', 'Auth\RegisterController@activateUser')->name(
 Route::group(array('prefix' => 'api'), function()
 {
     Route::get('/', function () {
-    return response()->json(['message' => 'Jobs API', 'status' => 'Connected']);
+    return response()->json(['message' => 'All working', 'status' => 'Connected']);
 });
     Route::resource('teams','Api\TeamApiController');
     Route::get('playerslist/{id}','Api\TeamApiController@show');
@@ -36,8 +36,5 @@ Route::group(array('prefix' => 'api'), function()
     Route::get('infogoals/{id}','Api\InfoGoalApiController@show');
     Route::resource('table','Api\TableApiController');
 
-    Route::group(['middleware' => 'auth:api'], function(){
 
-        Route::post('getUser', 'Api\AuthController@getUser');
-    });
 });

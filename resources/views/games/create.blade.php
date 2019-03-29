@@ -1,5 +1,6 @@
 @extends('layouts.ce')
 @section('content')
+
 <div class="container">
     <h2 class="ali_centro">Criar um novo jogo</h2><br/>
 
@@ -26,13 +27,6 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-                <label >Placar Casa</label>
-                <input type="text" class="form-control" name="placar_casa" value="">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="form-group col-md-4">
                 <label >Time Casa</label>
                 <select class="form-control" id="exampleFormControlSelect2" style="margin-top:5px" name="time_casa">
                     <option value="">Selecione</option>
@@ -42,11 +36,12 @@
                 </select>
             </div>
         </div>
+
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-                <label >Placa Visitante</label>
-                <input type="text" class="form-control" name="placar_visitante" value="">
+                <label >Placar Casa</label>
+                <input type="text" class="form-control" name="placar_casa" value="">
             </div>
         </div>
 
@@ -60,6 +55,14 @@
                         <option value="{{$team['id']}}">{{$team['nome']}}</option>
                     @endforeach
                 </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+                <label >Placa Visitante</label>
+                <input type="text" class="form-control" name="placar_visitante" value="">
             </div>
         </div>
 

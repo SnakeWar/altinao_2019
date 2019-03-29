@@ -22,7 +22,8 @@ class GameApiController extends Controller
             ->select('games.id AS id_jogo', 'games.data AS data', 't1.nome AS time_casa',
                 't1.sigla AS sigla_casa', 't2.nome AS time_visitante', 't2.sigla AS sigla_visitante',
                 'games.placar_casa AS placar_casa', 'games.placar_visitante AS placar_visitante')
-            ->get();
+            ->orderByRaw('id_jogo DESC')
+            ->paginate(10);
         return response()->json($jogos);
     }
 

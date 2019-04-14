@@ -18,6 +18,8 @@ class AuthController extends Controller
         ]);
         if ($validator->fails()) {
             return response()->json(['error'=>$validator->errors()], 401);                        }
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);                        }
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
         $user = User::create($input);

@@ -19,7 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::post('login', 'Api\AuthController@login');
 Route::post('register', 'Api\AuthController@register');
-Route::get('/oauth/token');
 Route::group(['middleware' => 'auth:api'], function(){
 
     Route::post('getUser', 'Api\AuthController@getUser');
